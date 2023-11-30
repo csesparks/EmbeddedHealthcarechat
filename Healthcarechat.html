@@ -27214,17 +27214,17 @@ h3{
 		embedded_svc.settings.entryFeature = 'LiveAgent';
 
 		embedded_svc.init(
-			'https://clarivateanalytics--qa.sandbox.my.salesforce.com',
-			'https://clarivateanalytics--qa.sandbox.my.site.com/',
+			'https://clarivateanalytics--preprod.sandbox.my.salesforce.com',
+			'https://clarivateanalytics--preprod.sandbox.my.site.com/',
 			gslbBaseURL,
-			'00DDP000005yYOw',
+			'00DDS000000wqUf',
 			'CA_HealthCare_Services',
 			{
 				baseLiveAgentContentURL: 'https://c.la1-c1cs-ia7.salesforceliveagent.com/content',
 				deploymentId: '57241000000D6r3',
-				buttonId: '573DP0000004I8g',
+				buttonId: '573DS0000004foO',
 				baseLiveAgentURL: 'https://d.la1-c1cs-ia7.salesforceliveagent.com/chat',
-				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04IDP00000000E82AI_18bae77500b',
+				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04IDS000000020X2AQ_18bf1a5cabd',
 				isOfflineSupportEnabled: false
 			}
 		);
@@ -27232,7 +27232,7 @@ h3{
 
 	if (!window.embedded_svc) {
 		var s = document.createElement('script');
-		s.setAttribute('src', 'https://clarivateanalytics--qa.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.setAttribute('src', 'https://clarivateanalytics--preprod.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
 		s.onload = function() {
 			initESW(null);
 		};
