@@ -27199,16 +27199,16 @@ h3{
 
       //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
       //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
-      var buttonId = '573DP0000004I8g';//This is Fallback Button Id
-      var primaryButtonId = '573DP0000004I8g'; 
+      var buttonId = '573KY0000008OI5';//This is Fallback Button Id
+      var primaryButtonId = '573KY0000008OI5'; 
       embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
-         return '573DP0000004I8g';
+         return '573KY0000008OI5';
       };
       embedded_svc.settings.fallbackRouting = [primaryButtonId,buttonId]; //An array of button IDs, user IDs, or userId_buttonId
 
     //LiveChatTranscriptStatus contains the API call code to know the status of LiveChatTranscript
 	var LiveChatTranscriptStatus_Script = document.createElement('script');
-	LiveChatTranscriptStatus_Script.src = 'https://clarivateanalytics--qa.sandbox.my.site.com/resource/LiveChatTranscriptStatus';
+	LiveChatTranscriptStatus_Script.src = 'https://clarivateanalytics.my.site.com/resource/LiveChatTranscriptStatus';
 	document.head.appendChild(LiveChatTranscriptStatus_Script);      
   
       embedded_svc.settings.enabledFeatures = ['LiveAgent'];
@@ -27395,18 +27395,18 @@ h3{
                 ]
             }
         ];
-        embedded_svc.init(
-			'https://clarivateanalytics--qa.sandbox.my.salesforce.com',
-			'https://clarivateanalytics--qa.sandbox.my.site.com/',
+         embedded_svc.init(
+			'https://clarivateanalytics.my.salesforce.com',
+			'https://clarivateanalytics.my.site.com',
 			gslbBaseURL,
-			'00DDP000005yYOw',
+			'00D41000001O1D5',
 			'CA_HealthCare_Services',
 			{
-				baseLiveAgentContentURL: 'https://c.la1-c1cs-ia7.salesforceliveagent.com/content',
+				baseLiveAgentContentURL: 'https://c.la4-c1-ia6.salesforceliveagent.com/content',
 				deploymentId: '57241000000D6r3',
-				buttonId: '573DP0000004I8g',
-				baseLiveAgentURL: 'https://d.la1-c1cs-ia7.salesforceliveagent.com/chat',
-				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04IDP00000000E82AI_18bae77500b',
+				buttonId: '573KY0000008OI5',
+				baseLiveAgentURL: 'https://d.la4-c1-ia6.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04IKY00000000012AA_18c3e234575',
 				isOfflineSupportEnabled: false
 			}
 		);
@@ -27414,7 +27414,7 @@ h3{
 
 	if (!window.embedded_svc) {
 		var s = document.createElement('script');
-		s.setAttribute('src', 'https://clarivateanalytics--qa.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.setAttribute('src', 'https://clarivateanalytics.my.salesforce.com/embeddedservice/5.0/esw.min.js');
 		s.onload = function() {
 			initESW(null);
 		};
