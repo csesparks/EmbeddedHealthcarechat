@@ -9,7 +9,6 @@
 	}
 	</style> 
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
-<script type='text/css' src='https://clarivateanalytics--qa.sandbox.my.site.com/resource/1664477017000/CA_SLDS_Scope_Compumark'></script>
 <script type='text/javascript'>
 	var initESW = function(gslbBaseURL) {
 		 embedded_svc.settings.displayHelpButton = false; //Or false
@@ -18,7 +17,7 @@
 
       //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
       //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
-      //var buttonId = '573KY0000008OI5';//This is Fallback Button Id
+      //
 	  var fallbackbuttonId = '573D7000000Cnq6';
       var primaryButtonId = '573D7000000Cnq1'; 
    
@@ -29,7 +28,7 @@
 
     //LiveChatTranscriptStatus contains the API call code to know the status of LiveChatTranscript
 	var LiveChatTranscriptStatus_Script = document.createElement('script');
-	LiveChatTranscriptStatus_Script.src = 'https://clarivateanalytics.my.site.com/resource/LiveChatTranscriptStatus';
+	LiveChatTranscriptStatus_Script.src = 'https://clarivateanalytics--dev.my.site.com/resource/LiveChatTranscriptStatus';
 	document.head.appendChild(LiveChatTranscriptStatus_Script);      
   
       embedded_svc.settings.enabledFeatures = ['LiveAgent'];
