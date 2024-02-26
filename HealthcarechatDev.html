@@ -12,7 +12,7 @@
 
 <script type='text/javascript'>
 	var initESW = function(gslbBaseURL) {
-		console.log('Entry###');
+		console.log('Entry1###');
 		 embedded_svc.settings.displayHelpButton = false; //Or false
       embedded_svc.settings.language = 'en'; //For example, enter 'en' or 'en-US'
       
@@ -24,11 +24,13 @@
       embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
          return primaryButtonId;
       };
+		console.log('Entry2###');
       embedded_svc.settings.fallbackRouting = [primaryButtonId,fallbackbuttonId]; //An array of button IDs, user IDs, or userId_buttonId
 
     //LiveChatTranscriptStatus contains the API call code to know the status of LiveChatTranscript
 	var LiveChatTranscriptStatus_Script = document.createElement('script');
 	LiveChatTranscriptStatus_Script.src = 'https://clarivateanalytics--dev.sandbox.my.site.com/resource/LiveChatTranscriptStatus';
+		console.log('Entry3###');
 	document.head.appendChild(LiveChatTranscriptStatus_Script);      
   
       embedded_svc.settings.enabledFeatures = ['LiveAgent'];
