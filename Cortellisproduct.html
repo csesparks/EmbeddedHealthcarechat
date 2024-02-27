@@ -1,0 +1,257 @@
+<html>
+<style type='text/css'>
+	.embeddedServiceHelpButton .helpButton .uiButton {
+		background-color: #005290;
+		font-family: "Arial", sans-serif;
+	}
+	.embeddedServiceHelpButton .helpButton .uiButton:focus {
+		outline: 1px solid #005290;
+	}
+</style>
+
+<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+<script type='text/javascript'>
+var initESW = function(gslbBaseURL) {
+      embedded_svc.settings.displayHelpButton = false; //Or false
+      embedded_svc.settings.language = 'en-US'; //For example, enter 'en' or 'en-US'
+      
+
+      //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+      //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
+      var fallbackbuttonId = '57341000000DAhZ';
+      var primaryButtonId = '57341000000DAhY'; 
+      embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+         return primaryButtonId;
+      };
+      embedded_svc.settings.fallbackRouting = [primaryButtonId,fallbackbuttonId]; //An array of button IDs, user IDs, or userId_buttonId
+
+        //LiveChatTranscriptStatus contains the API call code to know the status of LiveChatTranscript
+        var LiveChatTranscriptStatus_Script = document.createElement('script');
+        LiveChatTranscriptStatus_Script.src = 'https://clarivateanalytics.my.site.com/resource/LiveChatTranscriptStatus';
+        document.head.appendChild(LiveChatTranscriptStatus_Script);      
+  
+      embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+      embedded_svc.settings.entryFeature = 'LiveAgent';
+      embedded_svc.settings.extraPrechatFormDetails = 
+      [
+        {
+            "label": "Job Function",
+            "value": "Academic - Researcher",
+            "displayToAgent": false
+        }, 
+        {
+            "label": "Account Status",
+            "value": "Active",
+            "displayToAgent": false
+        },
+        {
+            "label": "Account Segment",
+            "value": "Life Sciences",
+            "displayToAgent": false
+        }
+      ];
+    
+      embedded_svc.settings.extraPrechatInfo = 
+      [
+        {
+            "entityName": "Account",
+            "showOnCreate": true,
+            "linkToEntityName": "Case",
+            "linkToEntityField": "AccountId",
+            "linkToEntityName": "Contact",
+            "linkToEntityField": "AccountId",
+            "saveToTranscript": "AccountId",
+            "entityFieldMaps": 
+            [
+                {
+                "isExactMatch": false,
+                "fieldName": "Name",
+                "doCreate": true,
+                "doFind": false,
+                "label": "Account Name 2"
+                },
+                {
+                "isExactMatch": true,
+                "fieldName": "SicDesc",
+                "doCreate": true,
+                "doFind": true,
+                "label": "Email"
+                },
+                {
+                "isExactMatch": false,
+                "fieldName": "RecordTypeId",
+                "doCreate": true,
+                "doFind": false,
+                "label": "Account Record Type"
+                },
+                {
+                "isExactMatch": false,
+                "fieldName": "CA_Account_Status__c",
+                "doCreate": true,
+                "doFind": false,
+                "label": "Account Status"
+                },
+                {
+                "isExactMatch": false,
+                "fieldName": "CA_Business_Segment__c",
+                "doCreate": true,
+                "doFind": false,
+                "label": "Account Segment"
+                }
+            ]
+        },
+        {
+            "entityName": "Contact",
+            "showOnCreate": true,
+            "linkToEntityName": "Case",
+            "linkToEntityField": "ContactId",
+            "saveToTranscript": "ContactId",
+            "entityFieldMaps": 
+            [
+                {
+                "isExactMatch": false,
+                "fieldName": "FirstName",
+                "doCreate": true,
+                "doFind": false,
+                "label": "First Name"
+                }, 
+                {
+                "isExactMatch": false,
+                "fieldName": "LastName",
+                "doCreate": true,
+                "doFind": false,
+                "label": "Last Name"
+                }, 
+                {
+                "isExactMatch": true,
+                "fieldName": "Email",
+                "doCreate": true,
+                "doFind": true,
+                "label": "Email"
+                }, 
+                {
+                "isExactMatch": false,
+                "fieldName": "Phone",
+                "doCreate": true,
+                "doFind": false,
+                "label": "Phone"
+                }, 
+                {
+                "isExactMatch": false,
+                "fieldName": "CA_Job_Function__c",
+                "doCreate": true,
+                "doFind": false,
+                "label": "Job Function"
+                }
+            ]
+        },
+        {
+            "entityName": "Case",
+            "showOnCreate": true,
+            "linkToEntityName": "Account",
+            "linkToEntityField": "CaseId",
+            "saveToTranscript": "CaseId",
+            "entityFieldMaps": 
+            [
+                {
+                "isExactMatch": false,
+                "fieldName": "Description",
+                "doCreate": true,
+                "doFind": false,
+                "label": "Question"
+                },
+                {
+                "isExactMatch": true,
+                "fieldName": "CaseNumber",
+                "doCreate": false,
+                "doFind": true,
+                "label": "Case Number 2"
+                }, 
+                {
+                "isExactMatch": false,
+                "fieldName": "SuppliedCompany",
+                "doCreate": true,
+                "doFind": false,
+                "label": "Web Company"
+                }, 
+                {
+                "isExactMatch": false,
+                "fieldName": "SuppliedEmail",
+                "doCreate": true,
+                "doFind": false,
+                "label": "Email"
+                }, 
+                {
+                "isExactMatch": false,
+                "fieldName": "SuppliedPhone",
+                "doCreate": true,
+                "doFind": false,
+                "label": "Phone"
+                }, 
+                {
+                "isExactMatch": false,
+                "fieldName": "CA_Webform_First_Name__c",
+                "doCreate": true,
+                "doFind": false,
+                "label": "First Name"
+                }, 
+                {
+                "isExactMatch": false,
+                "fieldName": "CA_Webform_Last_Name__c",
+                "doCreate": true,
+                "doFind": false,
+                "label": "Last Name"
+                }, 
+                {
+                "isExactMatch": false,
+                "fieldName": "CA_Web_Country__c",
+                "doCreate": true,
+                "doFind": false,
+                "label": "Web Country"
+                },
+                {
+                "isExactMatch": false,
+                "fieldName": "CA_Product__c",
+                "doCreate": true,
+                "doFind": false,
+                "label": "Product"
+                },
+                {
+                "isExactMatch": false,
+                "fieldName": "CA_Product_Group__c",
+                "doCreate": true,
+                "doFind": false,
+                "label": "Business Line"
+                }
+            ]
+        }
+    ];
+       		embedded_svc.init(
+			'https://clarivateanalytics.my.salesforce.com',
+			'https://clarivateanalytics.my.site.com/LifeSciences',
+			gslbBaseURL,
+			'00D41000001O1D5',
+			'Life_Sciences_Product',
+			{
+				baseLiveAgentContentURL: 'https://c.la1-c1cs-ord.salesforceliveagent.com/content',
+				deploymentId: '57241000000D6r3',
+				buttonId: '5734N000000XZD2',
+				baseLiveAgentURL: 'https://d.la1-c1cs-ord.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I2D0000008ObpUAE_176bd62bdc0',
+				isOfflineSupportEnabled: false
+			}
+		);
+	};
+
+	if (!window.embedded_svc) {
+		var s = document.createElement('script');
+		s.setAttribute('src', 'https://clarivateanalytics.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.onload = function() {
+			initESW(null);
+		};
+		document.body.appendChild(s);
+	} else {
+		initESW('https://service.force.com');
+	}
+</script>
+</html>
