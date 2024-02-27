@@ -33,9 +33,9 @@
       var primaryButtonId = '573D7000000Cnq1'; 
    
       embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
-	      return prechatFormData.primaryButtonId ? primaryButtonId : fallbackButtonId;
+	      return primaryButtonId ? primaryButtonId : fallbackButtonId;
 	      
-         //return primaryButtonId;
+         	//return primaryButtonId;
       };
 		 embedded_svc.settings.fallbackRouting = [primaryButtonId,fallbackbuttonId];
 		var LiveChatTranscriptStatus_Script = document.createElement('script');
