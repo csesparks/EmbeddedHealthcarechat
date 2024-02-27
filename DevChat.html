@@ -33,7 +33,8 @@
       var primaryButtonId = '573D7000000Cnq1'; 
    
       embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
-	      return prechatFormData.isTier1LoggedOff ? primaryButtonId : fallbackButtonId;
+	      return prechatFormData.primaryButtonId ? primaryButtonId : fallbackButtonId;
+	      
          //return primaryButtonId;
       };
 		 embedded_svc.settings.fallbackRouting = [primaryButtonId,fallbackbuttonId];
