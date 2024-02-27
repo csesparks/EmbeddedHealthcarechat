@@ -204,6 +204,7 @@
         ];
      
        embedded_svc.init(
+	       console.log('Entry4###');
 			'https://clarivateanalytics--dev.sandbox.my.salesforce.com',
 			'https://clarivateanalytics--dev.sandbox.my.site.com/',
 			gslbBaseURL,
@@ -218,9 +219,11 @@
 				isOfflineSupportEnabled: false
 			}
 		);
+		 console.log('Entry5###');
 	};
-	
+	 console.log('Entry6###');
 	if (!window.embedded_svc) {
+		 console.log('Entry7###');
 		var s = document.createElement('script');
 		s.setAttribute('src', 'https://clarivateanalytics--dev.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
 		s.onload = function() {
